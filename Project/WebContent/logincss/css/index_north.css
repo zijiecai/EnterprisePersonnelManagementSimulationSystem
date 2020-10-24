@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.topbox{width:100%;height:80px; background:url(../image/topbg.gif);font-size:12px;}
+.left{ width:34%;height:100%; background:url(../image/top_logo.png) no-repeat; float:left;}
+.right{width:66%;height:100%;float:left;}
+.r-top{width:100%;height:50px;}
+.r-top-pic{position:relative;top:3px;margin-right:10px;margin-top:}
+.r-down{width:100%;height:30px;background:url(../image/top_logo.png);}
+.r-d-left{width:1%;height:30px;background:url(../image/StatBarL.gif);float:left;}
+.r-d-right{width:99%;height:30px;background:url(../image/StatBarBg.png);float:left;}
+table{margin-left:35%;position:absolute;}
+img{margin-top:3px;}
+.pic{width:20px;height:45px;}
+.word{width:50px;height:45px;line-height:45px;}
+.admin{width:30%;height:30px;float:left;margin-left:50px;line-height:30px;}
+.time{ height:30px;line-height:30px;}
+.index{width:20%;float:right;line-height:50px;}
+.logout{width:10%;float:right;line-height:50px;}

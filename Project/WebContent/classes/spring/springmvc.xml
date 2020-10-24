@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd  
+            http://www.springframework.org/schema/context   
+            http://www.springframework.org/schema/context/spring-context-3.2.xsd  
+            http://www.springframework.org/schema/mvc  
+            http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd 
+            http://www.springframework.org/schema/util  
+            http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+	<!-- 扫描controller包 -->
+	<context:component-scan base-package="com.wyu.controller"></context:component-scan>
+
+	<!-- 以上两段配置可以省略 配置springmvc 1. RequestMapping(映射器) 2. RequestAdapter(适配器) -->
+	<mvc:annotation-driven/>
+	<!-- 配置拦截器 -->
+ <mvc:interceptors>
+  <mvc:interceptor>
+   <mvc:mapping path="/**"/>
+   <mvc:mapping path="/index.jsp"/>
+   <mvc:exclude-mapping path="/login"/>
+   <mvc:exclude-mapping path="/numberAjax"/>
+   <mvc:exclude-mapping path="/phoneAjax"/>
+   <mvc:exclude-mapping path="*.png"/>
+   <mvc:exclude-mapping path="*.js"/>
+   <mvc:exclude-mapping path="*.jpg"/>
+   <mvc:exclude-mapping path="*.js"/>
+   <bean class="com.wyu.interceptor.CheckUserInterceptor"></bean>
+  </mvc:interceptor>
+ </mvc:interceptors>
+	<!-- 加了类型转换器，静态资源 使用此种方法解析 它的意思就是没有映射到的URL交给默认的web容器中的servlet进行处理： -->
+	<mvc:default-servlet-handler />
+	<!-- 视图解析器 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="maxUploadSize" value="20971520" />
+	</bean>
+</beans>

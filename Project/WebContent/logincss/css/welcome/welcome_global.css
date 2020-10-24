@@ -1,0 +1,19 @@
+@charset "UTF-8";
+*{margin:0;padding:0;}
+body{font-family:"微软雅黑";background-color:#FFFFF0;}
+legend{font-size:20px;margin-left:15px;}
+fieldset{padding-left:15px;padding-right:15px;padding-bottom:15px;border:1px solid lightgray;width:auto;}
+.topbar{width:100%; height:50px;background:rgba(237,237,237,0.8);}
+.topbar .greenbar{width:10px;height:100%; background-color:#228B22; float:left;}
+.topbar .content{line-height:50px;font-size:15px;margin-left:20px;}
+.topbar .content span{color:#228B22;}
+.databoxes{margin-top:15px;width:auto;}
+.databoxes .databox{width:150px;height:100px;background-color:#f8f8f8;margin-left:10px;text-align:center;}
+.databoxes .databox .title{font-size:14px;color:gray;line-height:40px;}
+.databoxes .databox .digital{font-size:30px;color:#228B22;line-height:30px;}
+.teambox {border-collapse:collapse;}
+.teambox th{width:100px;text-align:left;padding-left:30px;font-size:15px;
+border-bottom:0.5px solid lightgray;border-right:0.5px solid lightgray;height:40px;color:#454545;
+}
+.teambox td{width:500px;text-align:left;color:#454545;
+font-size:15px;border-bottom:0.5px solid lightgray;padding-left:10px;}
